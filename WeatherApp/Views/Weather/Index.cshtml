@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model WeatherApp.ViewModels.WeatherViewModel
+
+<h3>Weather Report</h3>
+
+<form method="post">
+    <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" class="form-control" id="city" name="city">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (Model?.Weather != null)
+{
+    foreach (var w in Model.Weather)
+    {
+        <div>
+            <h4>Current weather in @Model.City:</h4>
+            <p>Temperature: @w.TemperatureC &#8451;</p>
+            <p>Humidity: @w.Date %</p>
+            <p>Description: @w.Summary</p>
+        </div>
+    }
+
+}
