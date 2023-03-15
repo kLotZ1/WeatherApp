@@ -40,7 +40,10 @@ builder.Services.AddHttpClient("WeatherApiClient", client =>
     client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
 }).AddUserAccessTokenHandler();
 
-
+builder.Services.AddHttpClient("IDPClient", client =>
+{
+    client.BaseAddress = new Uri(weatherAuthority);
+});
 
 builder.Services.AddAuthentication(opt =>
 {
@@ -69,6 +72,7 @@ builder.Services.AddAuthentication(opt =>
     opt.Scope.Add("weatherapi.read");
     opt.Scope.Add("weatherapi.write");
     opt.Scope.Add("country");
+    opt.Scope.Add("offline_access");
 
     opt.ClaimActions.Remove("aud");
     opt.ClaimActions.DeleteClaim("sid");

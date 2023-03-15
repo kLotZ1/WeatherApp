@@ -37,7 +37,7 @@ public class WeatherController : Controller
         using (var stream = await response.Content.ReadAsStreamAsync(cancellationToken))
         {
             var forecasts =
-                await JsonSerializer.DeserializeAsync<List<Weather>>(stream, cancellationToken: cancellationToken);
+                await JsonSerializer.DeserializeAsync<List<WeatherDto>>(stream, cancellationToken: cancellationToken);
             return View(new WeatherViewModel
             {
                 City = city,

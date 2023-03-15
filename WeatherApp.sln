@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "WeatherApp\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.Api", "WeatherApp.Api\WeatherApp.Api.csproj", "{1A528EBF-C00D-4694-9EBE-9390DAE78FA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGalary.Authorization", "ImageGalary.Authorization\ImageGalary.Authorization.csproj", "{D9DD6B8B-F3B9-46E3-BF82-F90064F586CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Authorization", "Weather.Authorization\Weather.Authorization.csproj", "{D9DD6B8B-F3B9-46E3-BF82-F90064F586CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

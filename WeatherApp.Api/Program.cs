@@ -17,7 +17,7 @@ JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+    /*.AddJwtBearer(options =>
     {
         options.Audience = "weatherapi";
         options.Authority = "https://localhost:5001";
@@ -27,6 +27,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             RoleClaimType = "role",
             NameClaimType = "given_name"
         };
+    });*/
+    .AddOAuth2Introspection(options =>
+    {
+        options.Authority = "https://localhost:5001";
+        options.ClientId = "weatherapi";
+        options.ClientSecret = "weatherapisecret2023";
+        options.NameClaimType = "given_name";
+        options.RoleClaimType = "role";
     });
 
 builder.Services.AddAuthorization(options =>

@@ -6,5 +6,5 @@ public class WeatherViewModel
 {
     public string City { get; set; }
     
-    public List<Weather> Weather { get; set; }
+    public List<WeatherDto> Weather { get; set; }
 }

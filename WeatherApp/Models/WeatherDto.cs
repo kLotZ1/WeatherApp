@@ -3,7 +3,7 @@
 namespace WeatherApp.Models;
 
 [Serializable]
-public class Weather
+public class WeatherDto
 {
     [JsonPropertyName("date")]
     public DateOnly Date { get; set; }
